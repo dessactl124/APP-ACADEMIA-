@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --academia-cor: #d6ff3f;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: #131316;
+  background-image: radial-gradient(circle at 1px 1px, rgba(244, 243, 238, 0.05) 1px, transparent 0);
+  background-size: 22px 22px;
+  color: #f4f3ee;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* cor dinâmica da academia, usada como accent em botões/badges */
+.accent-bg {
+  background-color: var(--academia-cor);
+}
+.accent-text {
+  color: var(--academia-cor);
+}
+.accent-border {
+  border-color: var(--academia-cor);
+}
+
+::selection {
+  background-color: var(--academia-cor);
+  color: #131316;
+}
+
+/* foco visível para acessibilidade */
+:focus-visible {
+  outline: 2px solid var(--academia-cor);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
