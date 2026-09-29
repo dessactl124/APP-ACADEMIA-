@@ -38,10 +38,10 @@ export default function AcademiaLogin() {
     else setErro(r.erro || 'Não foi possível entrar.')
   }
 
-  function onEntrarAcademia(e: FormEvent) {
+  async function onEntrarAcademia(e: FormEvent) {
     e.preventDefault()
     setErro('')
-    const r = loginAcademia(academia!.slug, email, senha)
+    const r = await loginAcademia(academia!.slug, email, senha)
     if (r.ok) navigate(`/${academia!.slug}/dashboard`)
     else setErro(r.erro || 'Não foi possível entrar.')
   }
